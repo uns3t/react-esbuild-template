@@ -1,0 +1,29 @@
+{
+  "name": "react-esbuild-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./esbuild.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uns3t/react-esbuild-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uns3t/react-esbuild-template/issues"
+  },
+  "homepage": "https://github.com/uns3t/react-esbuild-template#readme",
+  "dependencies": {
+    "esbuild": "^0.13.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@craftamap/esbuild-plugin-html": "^0.2.0"
+  }
+}
