@@ -1,0 +1,22 @@
+{
+    "eslint.enable": true,  //是否开启vscode的eslint
+    "eslint.options": { 
+        "extensions": [
+            ".js",
+            ".vue",
+            ".ts",
+            ".tsx"
+        ]
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue",
+        "typescript",
+        "typescriptreact"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}

@@ -1,36 +1,36 @@
-const esbuild = require('esbuild');
-const { lessLoader } = require('esbuild-plugin-less');
-const { htmlPlugin } = require('@craftamap/esbuild-plugin-html');
+import esbuild from 'esbuild';
+import { lessLoader } from 'esbuild-plugin-less';
+import { htmlPlugin } from '@craftamap/esbuild-plugin-html';
+import esbuildServe from './server/index.js';
+
 
 const htmlPluginOptions = {
     files: [
         {
             entryPoints: [
-                'src/app.jsx',
+                'src/app.tsx',
             ],
             filename: 'index.html',
             htmlTemplate: `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>React-esbuild-template</title>
-    </head>
-    <body>
-        <div id="root">
-        </div>
-    </body>
-    </html>
-  `,
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>React-esbuild-template</title>
+                </head>
+                <body>
+                    <div id="root">
+                    </div>
+                </body>
+                </html>
+            `,
         },
     ]
 }
 
-console.log(lessLoader);
-
 const options = {
-    entryPoints: ['src/app.jsx'],
+    entryPoints: ['src/app.tsx'],
     bundle: true,
     metafile: true, // needs to be set
     outdir: 'dist/', // needs to be set
@@ -40,7 +40,14 @@ const options = {
     ],
     loader: {
         '.ts': 'ts',
-    },
+    }
 }
 
-esbuild.build(options).catch(() => process.exit(1))
+esbuildServe(
+    options,
+    {
+        port: 7000,
+        root: './dist',
+        live: true
+    }
+)

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node ./esbuild.config.js"
+    "build": "node ./esbuild.config.js",
+    "serve": "node ./esbuild.config.js -w"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,13 @@
   },
   "devDependencies": {
     "@craftamap/esbuild-plugin-html": "^0.2.0",
-    "esbuild-plugin-less": "^1.1.5"
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "esbuild-plugin-less": "^1.1.5",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.0",
+    "prettier": "^2.4.1"
   }
 }
